@@ -68,13 +68,5 @@ module SmtpLw
       conn
     end
 
-    def per_page
-      @per_page || SmtpLw.per_page
-    end
-
-    def api_endpoint
-      @api_endpoint || SmtpLw.api_endpoint
-    end
-
   end
 end
