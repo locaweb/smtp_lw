@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["desenvolvedores@locaweb.com.br"]
   spec.summary       = %q{This is the ruby client for SMTP Locaweb product.}
   spec.description   = %q{This is the ruby client for SMTP Locaweb product.}
-  spec.homepage      = "http://locaweb.com.br"
+  spec.homepage      = "https://github.com/locaweb/smtp_lw"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'faraday'
   spec.add_dependency 'faraday_middleware'
+  spec.add_dependency 'dotenv'
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
