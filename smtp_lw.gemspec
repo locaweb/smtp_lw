@@ -6,11 +6,11 @@ require 'smtp_lw/version'
 Gem::Specification.new do |spec|
   spec.name          = "smtp_lw"
   spec.version       = SmtpLw::VERSION
-  spec.authors       = ["Rachad Honein"]
-  spec.email         = ["rachad.honein@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.authors       = ["Locaweb"]
+  spec.email         = ["desenvolvedores@locaweb.com.br"]
+  spec.summary       = %q{This is the ruby client for SMTP Locaweb product.}
+  spec.description   = %q{This is the ruby client for SMTP Locaweb product.}
+  spec.homepage      = "http://locaweb.com.br"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
