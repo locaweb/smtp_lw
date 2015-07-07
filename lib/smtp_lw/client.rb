@@ -52,20 +52,28 @@ module SmtpLw
 
     def paginate(options)
       page = options[:page] || 1
-      per = options[:per] || SmtpLw.per_page
+      per = options[:per] || (@per_page || SmtpLw.per_page)
       options.merge(page: page, per: per)
     end
 
     def connection
-      conn = Faraday.new(url: SmtpLw.api_endpoint, ssl: {verify: false}) do |c|
+      conn = Faraday.new(url: (@api_endpoint || SmtpLw.api_endpoint), ssl: {verify: false}) do |c|
         c.request :json
         c.response :json
         c.adapter Faraday.default_adapter
 
       end
       conn.headers['User-Agent'] = "SMTP LW Ruby API Client v#{VERSION}"
-      conn.headers['x-auth-token'] = SmtpLw.api_token
+      conn.headers['x-auth-token'] = @api_token || SmtpLw.api_token
       conn
+    end
+
+    def per_page
+      @per_page || SmtpLw.per_page
+    end
+
+    def api_endpoint
+      @api_endpoint || SmtpLw.api_endpoint
     end
 
   end
