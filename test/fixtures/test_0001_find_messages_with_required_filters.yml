@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.smtplw.com.br/v1/messages/?end_date=2015-01-07&page=1&per=10&start_date=2015-01-07&status=all
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - SMTP LW Ruby API Client v0.0.4
+      X-Auth-Token:
+      - "<STMP_LW_API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: Accepted
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+    body:
+      encoding: UTF-8
+      string: '{
+        "data": {
+          "messages": [
+            ["message 1", "message 2"]
+          ]
+        }
+      }'
+      http_version:
+  recorded_at: Tue, 12 Jan 2016 14:47:37 GMT
+recorded_with: VCR 3.0.1
