@@ -21,5 +21,15 @@ describe SmtpLw::Client::Messages do
     raw  = subject.send_message('hello', 'this is just a message', 'bruno.batalha@locaweb.com.br', 'rachad.honein@gmail.com')
     assert_equal raw['data']['attributes']['status'], 'Enfileirado'
   end
+
+  it "get a  message" do
+    raw  = subject.get_message('123')
+    assert_equal raw['data']['attributes']['status'], 'Enviado'
+    assert_equal raw['data']['attributes']['from'], 'info@locaweb.com.br'
+    assert_equal raw['data']['attributes']['to'], 'gabriel.souza@locaweb.com.br'
+    assert_equal raw['data']['attributes']['headers'].count, 3
+    assert_equal raw['data']['attributes']['headers']['x-api-message-id'], 123
+  end
+
 end
 
