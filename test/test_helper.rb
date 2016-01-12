@@ -10,6 +10,8 @@ require File.expand_path('../../lib/smtp_lw.rb', __FILE__)
 Dotenv.load
 
 VCR.configure do |c|
+  ENV['SMTP_LW_API_TOKEN'] = 'my-api-test-token'
+
   c.cassette_library_dir = "test/fixtures"
   c.hook_into :webmock
   c.filter_sensitive_data("<STMP_LW_API_TOKEN>") do
