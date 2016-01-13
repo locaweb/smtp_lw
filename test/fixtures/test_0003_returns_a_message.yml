@@ -37,7 +37,7 @@ http_interactions:
                 "data": {
                   "attributes": {
                     "from": "info@locaweb.com.br",
-                    "to": "gabriel.souza@locaweb.com.br",
+                    "to": "some.email@locaweb.com.br",
                     "cc": null,
                     "bcc": null,
                     "subject": "qualquer titulo",

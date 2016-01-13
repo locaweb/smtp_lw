@@ -18,8 +18,8 @@ module SmtpLw
         res.body
       end
 
-
       private
+      
       def paginate(options)
         page = options[:page] || 1
         per = options[:per] || (@per_page || SmtpLw.per_page)
