@@ -1,7 +1,6 @@
 require_relative '../../../test_helper'
 
 describe SmtpLw::Client::Messages do
-
   subject { SmtpLw::Client.new }
 
   before do
@@ -30,5 +29,4 @@ describe SmtpLw::Client::Messages do
     assert_equal raw['data']['attributes']['headers'].count, 3
     assert_equal raw['data']['attributes']['headers']['x-api-message-id'], 123
   end
-
 end

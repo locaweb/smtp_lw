@@ -11,23 +11,23 @@ Dotenv.load
 VCR.configure do |c|
   ENV['SMTP_LW_API_TOKEN'] = 'my-api-test-token'
 
-  c.cassette_library_dir = "test/fixtures"
+  c.cassette_library_dir = 'test/fixtures'
   c.hook_into :webmock
-  c.filter_sensitive_data("<STMP_LW_API_TOKEN>") do
+  c.filter_sensitive_data('<STMP_LW_API_TOKEN>') do
     test_api_token
   end
 end
 
 def test_api_token
-  ENV.fetch 'SMTP_LW_API_TOKEN', 'my-api-test-token'
+  ENV.fetch('SMTP_LW_API_TOKEN', 'my-api-test-token')
 end
 
 module Minitest
   module Reporters
     class CustomReporter < DefaultReporter
-      GRAY = '0;36'
-      GREEN = '1;32'
-      RED = '1;31'
+      GRAY = '0;36'.freeze
+      GREEN = '1;32'.freeze
+      RED = '1;31'.freeze
 
       def initialize(options = {})
         super
@@ -43,7 +43,7 @@ module Minitest
       end
 
       def color_up(string, color)
-        color? ? "\e\[#{ color }m#{ string }#{ ANSI::Code::ENDCODE }" : string
+        color? ? "\e\[#{color}m#{string}#{ANSI::Code::ENDCODE}" : string
       end
 
       def red(string)
@@ -62,4 +62,6 @@ module Minitest
 end
 
 reporter_options = { color: true, slow_count: 5 }
-Minitest::Reporters.use! [Minitest::Reporters::CustomReporter.new(reporter_options)]
+Minitest::Reporters.use!(
+  [Minitest::Reporters::CustomReporter.new(reporter_options)]
+)
