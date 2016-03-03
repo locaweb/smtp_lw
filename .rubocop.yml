@@ -4,99 +4,238 @@ AllCops:
     - '**/db/**/*'
     - '**/script/**'
 
-AlignArray:
+  DisplayCopNames: true
+
+Style/AccessModifierIndentation:
+  EnforcedStyle: indent
+  IndentationWidth: ~
+
+Style/Alias:
+  EnforcedStyle: prefer_alias
+
+Style/AlignHash:
+  EnforcedHashRocketStyle: key
+  EnforcedColonStyle: key
+  EnforcedLastArgumentHashStyle: always_inspect
+
+Style/AlignParameters:
+  EnforcedStyle: with_first_parameter
+
+Style/BarePercentLiterals:
+  EnforcedStyle: bare_percent
+  SupportedStyles:
+    - percent_q
+    - bare_percent
+
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: no_braces
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+
+Style/Documentation:
   Enabled: false
 
-ClassAndModuleChildren:
-  Enabled: false
+Style/DotPosition:
+  EnforcedStyle: leading
 
-ClassLength:
-  Enabled: false
+Style/EmptyElse:
+  EnforcedStyle: both
 
-DeprecatedClassMethods:
-  Enabled: true
+Style/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: false
 
-Documentation:
-  Enabled: false
+Style/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
 
-EmptyLines:
-  Enabled: false
+Style/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
 
-EmptyLinesAroundAccessModifier:
-  Enabled: true
+Style/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
 
-EmptyLinesAroundBody:
-  Enabled: true
+Style/FirstParameterIndentation:
+  EnforcedStyle: special_for_inner_method_call_in_parentheses
+  IndentationWidth: ~
 
-NegatedIf:
-  Enabled: true
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: when_needed
 
-DeprecatedHashMethods:
-  Enabled: true
+Style/GlobalVars:
+  AllowedVariables: []
 
-HashSyntax:
-  Enabled: true
+Style/HashSyntax:
+  EnforcedStyle: ruby19
+  UseHashRocketsWithSymbolValues: false
 
-LeadingCommentSpace:
-  Enabled: false
+Style/IfUnlessModifier:
+  MaxLineLength: 80
 
-LineLength:
+Style/IndentationConsistency:
+  EnforcedStyle: normal
+
+Style/IndentationWidth:
+  Width: 2
+
+Style/IndentArray:
+  EnforcedStyle: special_inside_parentheses
+
+Style/IndentHash:
+  EnforcedStyle: special_inside_parentheses
+
+Style/NonNilCheck:
+  IncludeSemanticChanges: false
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_parentheses
+
+Style/MethodName:
+  EnforcedStyle: snake_case
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: aligned
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: aligned
+
+Style/NumericLiterals:
+  MinDigits: 5
+
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: true
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  ()
+    '%i': ()
+    '%q': ()
+    '%Q': ()
+    '%r': '{}'
+    '%s': ()
+    '%w': ()
+    '%W': ()
+    '%x': ()
+
+Style/PercentQLiterals:
+  EnforcedStyle: lower_case_q
+
+Style/PredicateName:
+  NamePrefix:
+    - is_
+    - has_
+    - have_
+  NamePrefixBlacklist:
+    - is_
+    - has_
+    - have_
+  NameWhitelist:
+    - is_a?
+
+Style/SignalException:
+  EnforcedStyle: only_fail
+
+Style/SingleLineMethods:
+  AllowIfMethodIsEmpty: true
+
+Style/SpaceBeforeFirstArg:
+  AllowForAlignment: true
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  ConsistentQuotesInMultiline: false
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+
+Style/SpaceAroundBlockParameters:
+  EnforcedStyleInsidePipes: no_space
+
+Style/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+
+Style/SpaceAroundOperators:
+  AllowForAlignment: true
+
+Style/SpaceBeforeBlockBraces:
+  EnforcedStyle: space
+
+Style/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  SpaceBeforeBlockParameters: true
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+
+Style/SpaceInsideStringInterpolation:
+  EnforcedStyle: no_space
+
+Style/SymbolArray:
+  EnforcedStyle: percent
+
+Style/TrailingBlankLines:
+  EnforcedStyle: final_newline
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: no_comma
+
+Style/VariableName:
+  EnforcedStyle: snake_case
+
+##################### Metrics ##################################
+
+Metrics/BlockNesting:
+  Max: 3
+
+Metrics/ClassLength:
+  CountComments: false
   Max: 100
 
-MethodDefParentheses:
-  Enabled: true
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 100
 
-MethodLength:
+Metrics/LineLength:
+  Max: 100
+  AllowHeredoc: true
+  AllowURI: true
+
+Metrics/MethodLength:
+  CountComments: false
   Max: 10
 
-ModuleFunction:
-  Enabled: false
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
 
-NumericLiterals:
-  MinDigits: 15
+##################### Lint ##################################
 
-PredicateName:
-  Enabled: true
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
 
-RescueException:
-  Enabled: false
+Lint/EndAlignment:
+  AlignWith: keyword
+  AutoCorrect: false
 
-RedundantSelf:
-  Enabled: true
+Lint/DefEndAlignment:
+  AlignWith: start_of_line
+  AutoCorrect: false
 
-SpaceAfterComma:
-  Enabled: true
+Lint/UnusedBlockArgument:
+  IgnoreEmptyBlocks: true
 
-SpaceAroundEqualsInParameterDefault:
-  Enabled: true
+Lint/UnusedMethodArgument:
+  AllowUnusedKeywordArguments: false
+  IgnoreEmptyMethods: true
 
-SpaceAroundOperators:
-  Enabled: true
+##################### Performance ############################
 
-SpaceBeforeBlockBraces:
-  Enabled: true
-
-SpaceInsideBlockBraces:
-  Enabled: true
-
-SpaceInsideHashLiteralBraces:
-  Enabled: true
-
-SignalException:
-  Enabled: false
-
-# Single Quotes
-StringLiterals:
-  Enabled: false
-
-TrailingBlankLines:
-  Enabled: true
-
-TrailingWhitespace:
-  Enabled: true
-
-GlobalVars:
-  Enabled: false
-
-CyclomaticComplexity:
-  Enabled: false
+Performance/RedundantMerge:
+  MaxKeyValuePairs: 2
