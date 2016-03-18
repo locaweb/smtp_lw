@@ -4,19 +4,15 @@ This is the ruby client for SMTP Locaweb product.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+```shell
+gem install smtp_lw
+```
+or add this line to Gemfile:
 
 ```ruby
 gem 'smtp_lw'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install smtp_lw
+and run `bundle install` from your shell.
 
 ## Usage
 
@@ -24,7 +20,6 @@ Or install it yourself as:
 ```ruby
 client = SmtpLw::Client.new(api_token: 'your api token from the panel')
 ```
-
 or
 
 ```ruby
@@ -33,33 +28,35 @@ SmtpLw.configure do |c|
   c.per_page = 50
 end
 
-# instanciate the client
+# instantiate the client
 client = SmtpLw::Client.new
 ```
 
-Alternatively you can authenticate setting an ENV: 
+You can also authenticate setting an environment variable
 
-```
+```shell
 SMTP_LW_API_TOKEN='your api token'
 ```
-and then:
+and then use the client
 ```ruby
 client = SmtpLw::Client.new
 ```
 
-### Get the list of messages
+### Retrieving messages for a given period
 
 ```ruby
 client.list_messages('all', '2015-07-01', '2015-07-30')
 ```
-You can pass options as specified in the API documentation:
+
+You can pass options as specified in the [API documentation](http://developer.locaweb.com.br/documentacoes/smtp/):
 ```ruby
-client.list_messages('all', '2015-07-01', '2015-07-30' {page: 1, per: 50})
+client.list_messages('all', '2015-07-01', '2015-07-30', {page: 1, per: 50})
 ```
 
-### Send a message
+### Sending a message
+
 ```ruby
-client.send_message("meeting tomorrow at 11", "this is the body of my msg", 'me@domain.com',
+client.send_message('meeting tomorrow at 11', 'this is the body of my msg', 'me@domain.com',
 'you@domain.com')
 ```
 
