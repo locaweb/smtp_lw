@@ -20,8 +20,8 @@ module SmtpLw
     # @param uri [String] The path, relative to {#api_endpoint}
     # @param options [Hash] Query and header params for request
     # @return [Faraday::Response]
-    def get(uri, options={})
-      response = connection.get(uri, options)
+    def get(uri, options = {})
+      connection.get(uri, options)
     end
 
     # Make a HTTP POST request

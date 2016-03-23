@@ -12,17 +12,22 @@ describe SmtpLw::Client::Messages do
   end
 
   it 'find messages with required filters' do
-    raw  = subject.list_messages('all', '2015-01-07', '2015-01-07', per: 10)
-    assert_equal raw["data"]["messages"].count>0, true
+    raw = subject.list_messages('all', '2015-01-07', '2015-01-07', per: 10)
+    assert_equal raw['data']['messages'].count > 0, true
   end
 
   it 'will send a message' do
-    raw  = subject.send_message('hello', 'this is just a message', 'bruno.batalha@locaweb.com.br', 'rachad.honein@gmail.com')
+    raw = subject.send_message(
+      'hello',
+      'this is just a message',
+      'bruno.batalha@locaweb.com.br',
+      'rachad.honein@gmail.com'
+    )
     assert_equal raw['data']['attributes']['status'], 'Enfileirado'
   end
 
   it 'returns a message' do
-    raw  = subject.get_message('123')
+    raw = subject.get_message('123')
     assert_equal raw['data']['attributes']['status'], 'Enviado'
     assert_equal raw['data']['attributes']['from'], 'info@locaweb.com.br'
     assert_equal raw['data']['attributes']['to'], 'some.email@locaweb.com.br'
