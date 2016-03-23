@@ -6,7 +6,6 @@ require 'vcr'
 require 'dotenv'
 require File.expand_path('../../lib/smtp_lw.rb', __FILE__)
 
-
 Dotenv.load
 
 VCR.configure do |c|

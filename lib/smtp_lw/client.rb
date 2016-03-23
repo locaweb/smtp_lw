@@ -19,7 +19,6 @@ module SmtpLw
     # @param options [Hash] Query and header params for request
     # @return [Faraday::Response]
     def get(uri, options={})
-      options = paginate(options)
       response = connection.get uri, options
     end
 
@@ -49,12 +48,6 @@ module SmtpLw
     end
 
     private
-
-    def paginate(options)
-      page = options[:page] || 1
-      per = options[:per] || (@per_page || SmtpLw.per_page)
-      options.merge(page: page, per: per)
-    end
 
     def connection
       conn = Faraday.new(url: (@api_endpoint || SmtpLw.api_endpoint), ssl: {verify: false}) do |c|
