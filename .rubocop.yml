@@ -1,0 +1,241 @@
+AllCops:
+  Exclude:
+    - '**/vendor/**'
+    - '**/db/**/*'
+    - '**/script/**'
+
+  DisplayCopNames: true
+
+Style/AccessModifierIndentation:
+  EnforcedStyle: indent
+  IndentationWidth: ~
+
+Style/Alias:
+  EnforcedStyle: prefer_alias
+
+Style/AlignHash:
+  EnforcedHashRocketStyle: key
+  EnforcedColonStyle: key
+  EnforcedLastArgumentHashStyle: always_inspect
+
+Style/AlignParameters:
+  EnforcedStyle: with_first_parameter
+
+Style/BarePercentLiterals:
+  EnforcedStyle: bare_percent
+  SupportedStyles:
+    - percent_q
+    - bare_percent
+
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: no_braces
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+
+Style/Documentation:
+  Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: leading
+
+Style/EmptyElse:
+  EnforcedStyle: both
+
+Style/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: false
+
+Style/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+
+Style/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
+
+Style/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+
+Style/FirstParameterIndentation:
+  EnforcedStyle: special_for_inner_method_call_in_parentheses
+  IndentationWidth: ~
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: when_needed
+
+Style/GlobalVars:
+  AllowedVariables: []
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19
+  UseHashRocketsWithSymbolValues: false
+
+Style/IfUnlessModifier:
+  MaxLineLength: 80
+
+Style/IndentationConsistency:
+  EnforcedStyle: normal
+
+Style/IndentationWidth:
+  Width: 2
+
+Style/IndentArray:
+  EnforcedStyle: special_inside_parentheses
+
+Style/IndentHash:
+  EnforcedStyle: special_inside_parentheses
+
+Style/NonNilCheck:
+  IncludeSemanticChanges: false
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_parentheses
+
+Style/MethodName:
+  EnforcedStyle: snake_case
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: aligned
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: aligned
+
+Style/NumericLiterals:
+  MinDigits: 5
+
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: true
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  ()
+    '%i': ()
+    '%q': ()
+    '%Q': ()
+    '%r': '{}'
+    '%s': ()
+    '%w': ()
+    '%W': ()
+    '%x': ()
+
+Style/PercentQLiterals:
+  EnforcedStyle: lower_case_q
+
+Style/PredicateName:
+  NamePrefix:
+    - is_
+    - has_
+    - have_
+  NamePrefixBlacklist:
+    - is_
+    - has_
+    - have_
+  NameWhitelist:
+    - is_a?
+
+Style/SignalException:
+  EnforcedStyle: only_fail
+
+Style/SingleLineMethods:
+  AllowIfMethodIsEmpty: true
+
+Style/SpaceBeforeFirstArg:
+  AllowForAlignment: true
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  ConsistentQuotesInMultiline: false
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+
+Style/SpaceAroundBlockParameters:
+  EnforcedStyleInsidePipes: no_space
+
+Style/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+
+Style/SpaceAroundOperators:
+  AllowForAlignment: true
+
+Style/SpaceBeforeBlockBraces:
+  EnforcedStyle: space
+
+Style/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  SpaceBeforeBlockParameters: true
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+
+Style/SpaceInsideStringInterpolation:
+  EnforcedStyle: no_space
+
+Style/SymbolArray:
+  EnforcedStyle: percent
+
+Style/TrailingBlankLines:
+  EnforcedStyle: final_newline
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: no_comma
+
+Style/VariableName:
+  EnforcedStyle: snake_case
+
+##################### Metrics ##################################
+
+Metrics/BlockNesting:
+  Max: 3
+
+Metrics/ClassLength:
+  CountComments: false
+  Max: 100
+
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 100
+
+Metrics/LineLength:
+  Max: 100
+  AllowHeredoc: true
+  AllowURI: true
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 10
+
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
+
+##################### Lint ##################################
+
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
+Lint/EndAlignment:
+  AlignWith: keyword
+  AutoCorrect: false
+
+Lint/DefEndAlignment:
+  AlignWith: start_of_line
+  AutoCorrect: false
+
+Lint/UnusedBlockArgument:
+  IgnoreEmptyBlocks: true
+
+Lint/UnusedMethodArgument:
+  AllowUnusedKeywordArguments: false
+  IgnoreEmptyMethods: true
+
+##################### Performance ############################
+
+Performance/RedundantMerge:
+  MaxKeyValuePairs: 2

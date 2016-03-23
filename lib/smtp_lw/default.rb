@@ -1,7 +1,7 @@
 module SmtpLw
   module Default
-    API_BASE = "https://api.smtplw.com.br".freeze
-    API_VERSION = "/v1/".freeze
+    API_BASE = 'https://api.smtplw.com.br'.freeze
+    API_VERSION = '/v1/'.freeze
 
     class << self
       def api_endpoint
@@ -21,7 +21,7 @@ module SmtpLw
       end
 
       def options
-        Hash[SmtpLw::Configurable.keys.map{|key| [key, send(key)]}]
+        Hash[SmtpLw::Configurable.keys.map { |key| [key, send(key)] }]
       end
 
       # used for pagination when available on get

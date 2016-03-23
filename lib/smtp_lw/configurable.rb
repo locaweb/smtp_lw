@@ -43,6 +43,5 @@ module SmtpLw
       end
       self
     end
-
   end
 end
