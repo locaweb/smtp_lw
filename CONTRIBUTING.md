@@ -32,7 +32,7 @@ Ideally, a bug report should include a pull request with failing specs.
 5. [Submit a pull request.][pr]
 
 ## Notes
-* Please add tests if you changed code. Contributions without tests won't be accepted.
+* Please add tests and run Rubocop to check for offenses if you changed code. Contributions without tests or with Rubocop offenses won't be accepted.
 * Please don't update the Gem version.
 
 [repo]: https://github.com/locaweb/smtp_lw/tree/master
