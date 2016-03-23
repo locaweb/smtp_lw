@@ -62,8 +62,10 @@ client.send_message('meeting tomorrow at 11', 'this is the body of my msg', 'me@
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/smtp_lw/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Please see [CONTRIBUTING.md](https://github.com/locaweb/smtp_lw/blob/master/CONTRIBUTING.md).
+
+## License 
+
+smtp_lw is Copyright © 2015-2016 Locaweb. It is free
+software, and may be redistributed under the terms specified in the
+[LICENSE](/LICENSE) file.
